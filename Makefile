@@ -21,7 +21,7 @@ cargo-lock:
 
 # Start development server; build debug and run
 dev:  cargo-lock
-	yarn tauri dev
+	yarn tauri dev; kill $$(ps ax | awk '/http-server/ && !/awk/ {print $$1}')
 
 
 .PHONY: init clean cargo-lock dev

@@ -6,7 +6,7 @@
   "build": {
     "distDir": "../www",
     "devPath": "http://localhost:8000",
-    "beforeDevCommand": "python3 -m http.server -d www/",
+    "beforeDevCommand": "yarn http-server -p 8000 -c-1 www/",
     "beforeBuildCommand": "",
     "withGlobalTauri": true
   },
