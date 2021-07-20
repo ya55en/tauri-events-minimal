@@ -7,17 +7,34 @@
 
     <script type="text/javascript">
       var Tauri = null;
-      import('/invoke.js').then(imported => {
+      import('/invoke.js').then((imported) => {
         Tauri = imported;
       });
 
       const sayHello = () => {
-        console.log('sayHello() called')
+        console.log('sayHello() called');
         let name = 'Alice';
-        Tauri.invoke_cmd('say_hello', {'name': name}).then(ret => {
+        Tauri.invoke_cmd('say_hello', { name: name }).then((ret) => {
           console.log(`say_hello('${name}') returned '${ret}'`);
         });
       };
+
+      var sendEvent = null;
+      import('/modules/@tauri-apps/api/event.js').then((eventMod) => {
+        const onUserClick = eventMod.listen('user-click', (event) => {
+          // event.event is the event name (useful if you want to use a single callback fn for multiple event types)
+          // event.payload is the payload object
+          console.log('onUserClick() called');
+          console.log(event.event);
+          console.log(event.payload);
+        });
+
+        sendEvent = () => {
+          console.log('sendEvent() called');
+          eventMod.emit('user-click', '{"message": "Mmmm ... Tauri looks good!"}');
+        };
+      });
+
     </script>
 
   </head>
@@ -26,5 +43,6 @@
     <h2>Tauri Events (Minimal Example)</h2>
     <p>Minimal example for a Tauri events-based application.</p>
     <button onclick="sayHello();">Say Hello!</button>
+    <button onclick="sendEvent();">Send Event</button>
   </body>
 </html>

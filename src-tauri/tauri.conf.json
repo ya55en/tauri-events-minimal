@@ -5,8 +5,8 @@
   },
   "build": {
     "distDir": "../www",
-    "devPath": "../www",
-    "beforeDevCommand": "",
+    "devPath": "http://localhost:8000",
+    "beforeDevCommand": "python3 -m http.server -d www/",
     "beforeBuildCommand": "",
     "withGlobalTauri": true
   },
