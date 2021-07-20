@@ -12,4 +12,5 @@ Cargo.lock
 
 # Front-end-specific exclusions
 node_modules/
+www/modules
 yarn.lock

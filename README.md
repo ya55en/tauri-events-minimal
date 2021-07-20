@@ -49,7 +49,7 @@ Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 ```
 
- and then the app window would appear.
+ and then the app window should appear.
 
 ## Check how it works
 

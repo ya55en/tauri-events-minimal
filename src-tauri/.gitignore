@@ -5,3 +5,5 @@ WixTools
 
 # Exclude the auto-genrated icons for now
 /icons/
+# Except for this one (mandatory):
+!icons/32x32.png
