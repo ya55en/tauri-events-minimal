@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tauri Events (Minimal Example)</title>
+    <link href="/styles.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+      var Tauri = null;
+      import('/invoke.js').then(imported => {
+        Tauri = imported;
+      });
+
+      const sayHello = () => {
+        console.log('sayHello() called')
+        let name = 'Alice';
+        Tauri.invoke_cmd('say_hello', {'name': name}).then(ret => {
+          console.log(`say_hello('${name}') returned '${ret}'`);
+        });
+      };
+    </script>
+
+  </head>
+
+  <body>
+    <h2>Tauri Events (Minimal Example)</h2>
+    <p>Minimal example for a Tauri events-based application.</p>
+    <button onclick="sayHello();">Say Hello!</button>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "tauri-events-minimal",
+  "version": "0.1.0",
+  "description": "Minimal Tauri events example",
+  "main": "index.html",
+  "repository": "https://github.com/yassen-damyanov/tauri-events-minimal.git",
+  "author": "Yassen Damyanov <yassen@qredo.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "devDependencies": {
+    "@tauri-apps/api": "^1.0.0-beta.5",
+    "@tauri-apps/cli": "^1.0.0-beta.6"
+  }
+}
