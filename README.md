@@ -40,22 +40,39 @@ Enter the repository root and do:
 $ make dev
 ```
 
+(The first run is going to take time, compiling some 380 crates.)
+
 For a while you should see something like
 
 ```
-Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
-   Compiling app v0.1.0 (/home/yassen/Work/public/tauri-events-minimal/src-tauri)
-    Building [=======================> ] 379/380: app(bin)                                                         
-
+.
+.
+Starting up http-server, serving www/
+Available on:
+  http://127.0.0.1:8000
+  http://192.168.34.128:8000
+Hit CTRL-C to stop the server
+   Compiling proc-macro2 v1.0.27
+   Compiling unicode-xid v0.2.2
+   Compiling syn v1.0.73
+   .
+   . [compiling lots of modules]
+   . 
+   Compiling tauri-runtime v0.1.4
+   Compiling tauri-runtime-wry v0.1.4
+    Finished dev [unoptimized + debuginfo] target(s) in 2m 23s
+     Running `target/debug/app`
+** Tauri app about to start
+[2021-07-20T16:58:14.504Z]  "GET /" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15"
 ```
 
- and then the app window should appear.
+and then the app window should appear.
 
 ## Check how it works
 
 - Open the dev tools of the app window (e.g. via right-click + 'Inspect Element')
-- Choose the 'Console' tab on bottom
-- Click "Send Event"
+- Choose the 'Console' tab on bottom to reveal the JS console
+- Click "Send Event" in the application pane above
 
 What appears on the console:
 
