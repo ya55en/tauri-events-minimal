@@ -6,18 +6,6 @@
     <link href="/styles.css" rel="stylesheet" />
 
     <script type="text/javascript">
-      var Tauri = null;
-      import('/invoke.js').then((imported) => {
-        Tauri = imported;
-      });
-
-      const sayHello = () => {
-        console.log('sayHello() called');
-        let name = 'Alice';
-        Tauri.invoke_cmd('say_hello', { name: name }).then((ret) => {
-          console.log(`say_hello('${name}') returned '${ret}'`);
-        });
-      };
 
       var sendEvent = null;
       import('/modules/@tauri-apps/api/event.js').then((eventMod) => {
