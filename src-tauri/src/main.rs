@@ -33,7 +33,7 @@ fn main() {
          app.emit_all(
             "user-click",
             Payload {
-               message: "Tauri is awesome!".into(),
+               message: "Tauri is awesome! (coming from back-end)".into(),
             },
          )
          .unwrap();

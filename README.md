@@ -80,7 +80,7 @@ What appears on the console:
 sendEvent() called
 onUserClick() called
 user-click
-{"message": "Mmmm ... Tauri looks good!"}
+{"message": "Tauri looks good! (coming from front-end)"}
 ```
 
 which means that the front-end listener has intercepted the front-end `emit`
